@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Grades Calculator</title>
+  </head>
+  <body>
+    <script>
+      // Prompt user to enter marks for five subjects
+      let physics = parseFloat(prompt("Enter marks obtained in Physics: "));
+      let chemistry = parseFloat(prompt("Enter marks obtained in Chemistry: "));
+      let biology = parseFloat(prompt("Enter marks obtained in Biology: "));
+      let mathematics = parseFloat(
+        prompt("Enter marks obtained in Mathematics: ")
+      );
+      let computer = parseFloat(prompt("Enter marks obtained in Computer: "));
+
+      // Calculate total marks and percentage
+      let totalMarks = physics + chemistry + biology + mathematics + computer;
+      let percentage = (totalMarks / 500) * 100;
+
+      // Assign grade based on percentage
+      let grade;
+      if (percentage >= 90) {
+        grade = "A";
+      } else if (percentage >= 80) {
+        grade = "B";
+      } else if (percentage >= 70) {
+        grade = "C";
+      } else if (percentage >= 60) {
+        grade = "D";
+      } else if (percentage >= 40) {
+        grade = "E";
+      } else {
+        grade = "F";
+      }
+
+      // Print out assigned grade
+      alert(
+        "Percentage: " +
+          percentage +
+          "%\nGrade: " +
+          grade +
+          "\nPhysics: " +
+          physics +
+          "%\nChemistry: " +
+          chemistry +
+          "%\nBiology: " +
+          biology +
+          "%\nMathematics: " +
+          mathematics +
+          "%\nComputer: " +
+          computer +
+          "%\n"
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Gross Salary Calculator</title>
+  </head>
+  <body>
+    <script>
+      const basicSalary = parseInt(
+        prompt("Enter the basic salary of the employee: ")
+      );
+      let hra, da;
+
+      if (basicSalary <= 10000) {
+        hra = 0.2 * basicSalary;
+        da = 0.8 * basicSalary;
+      } else if (basicSalary <= 20000) {
+        hra = 0.25 * basicSalary;
+        da = 0.9 * basicSalary;
+      } else {
+        hra = 0.3 * basicSalary;
+        da = 0.95 * basicSalary;
+      }
+
+      const grossSalary = basicSalary + hra + da;
+
+      document.write(`<p>Basic Salary: ${basicSalary}</p>`);
+      document.write(`<p>HRA: ${hra}</p>`);
+      document.write(`<p>DA: ${da}</p>`);
+      document.write(`<p>Gross Salary: ${grossSalary}</p>`);
+    </script>
+  </body>
+</html>
