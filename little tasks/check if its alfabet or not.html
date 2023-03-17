@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alphabet Checker</title>
+</head>
+<body>
+    <h1>Alphabet Checker</h1>
+    <form>
+        <label for="character">Enter a character:</label>
+        <input type="text" id="character" name="character"><br><br>
+        <button type="button" onclick="checkAlphabet()">Check</button>
+    </form>
+    <p id="result"></p>
+    
+    <script>
+        function checkAlphabet() {
+            var character = document.getElementById("character").value;
+            
+            if ((character >= 'a' && character <= 'z') || (character >= 'A' && character <= 'Z')) {
+                document.getElementById("result").innerHTML = character + " is an alphabet.";
+            } else {
+                document.getElementById("result").innerHTML = character + " is not an alphabet.";
+            }
+        }
+    </script>
+</body>
+</html>
