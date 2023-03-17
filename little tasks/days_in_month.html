@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Days in Month</title>
+</head>
+<body>
+    <h1>Days in Month</h1>
+    <form>
+        <label for="month">Enter month number (1-12):</label>
+        <input type="number" id="month" name="month" min="1" max="12"><br><br>
+        <button type="button" onclick="getDays()">Get days</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function getDays() {
+            var month = parseInt(document.getElementById("month").value);
+            
+            if (month < 1 || month > 12) {
+                document.getElementById("result").innerHTML = "Invalid month number.";
+            } else {
+                var days = getDaysInMonth(month);
+                document.getElementById("result").innerHTML = "Number of days in month " + month + " is " + days;
+            }
+        }
+
+        function getDaysInMonth(month) {
+            var days;
+
+            switch (month) {
+                case 2:
+                    days = 28;
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    days = 30;
+                    break;
+                default:
+                    days = 31;
+                    break;
+            }
+
+            return days;
+        }
+    </script>
+</body>
+</html>

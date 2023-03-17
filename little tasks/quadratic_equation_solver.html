@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quadratic Equation Solver</title>
+  </head>
+  <body>
+    <h1>Quadratic Equation Solver</h1>
+    <p>Enter the coefficients of the quadratic equation:</p>
+    <input type="number" id="aInput" placeholder="a" />
+    <input type="number" id="bInput" placeholder="b" />
+    <input type="number" id="cInput" placeholder="c" />
+    <button onclick="solve()">Solve</button>
+    <p id="result"></p>
+
+    <script>
+      function solve() {
+        let a = parseInt(document.getElementById("aInput").value);
+        let b = parseInt(document.getElementById("bInput").value);
+        let c = parseInt(document.getElementById("cInput").value);
+
+        let discriminant = b * b - 4 * a * c;
+
+        if (discriminant > 0) {
+          let root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+          let root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+          document.getElementById("result").innerHTML =
+            "The roots are " + root1 + " and " + root2;
+        } else if (discriminant === 0) {
+          let root = -b / (2 * a);
+          document.getElementById("result").innerHTML = "The root is " + root;
+        } else {
+          let realPart = -b / (2 * a);
+          let imaginaryPart = Math.sqrt(-discriminant) / (2 * a);
+          document.getElementById("result").innerHTML =
+            "The roots are " +
+            realPart +
+            "+" +
+            imaginaryPart +
+            "i and " +
+            realPart +
+            "-" +
+            imaginaryPart +
+            "i";
+        }
+      }
+    </script>
+  </body>
+</html>
