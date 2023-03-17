@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Triangle Validator</title>
+    <script>
+      function validateTriangle() {
+        // Get input angles from user
+        let angle1 = parseInt(document.getElementById("angle1").value);
+        let angle2 = parseInt(document.getElementById("angle2").value);
+        let angle3 = parseInt(document.getElementById("angle3").value);
+
+        // Check if the sum of angles equals 180 degrees
+        if (angle1 + angle2 + angle3 === 180) {
+          document.getElementById("result").innerHTML = "The triangle is valid.";
+        } else {
+          document.getElementById("result").innerHTML = "The triangle is not valid.";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Triangle Validator1</h1>
+    <form>
+      <label for="angle1">Angle 1:</label>
+      <input type="number" id="angle1" name="angle1"><br><br>
+      <label for="angle2">Angle 2:</label>
+      <input type="number" id="angle2" name="angle2"><br><br>
+      <label for="angle3">Angle 3:</label>
+      <input type="number" id="angle3" name="angle3"><br><br>
+      <input type="button" value="Validate Triangle" onclick="validateTriangle()">
+    </form>
+    <p id="result"></p>
+  </body>
+</html>
