@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Profit or Loss Calculator</title>
+  </head>
+  <body>
+    <h1>Profit or Loss Calculator</h1>
+    <form>
+      <label for="cost-price">Cost Price:</label>
+      <input type="number" id="cost-price" required />
+      <label for="selling-price">Selling Price:</label>
+      <input type="number" id="selling-price" required />
+      <button type="button" onclick="calculate()">Calculate</button>
+    </form>
+    <div id="result"></div>
+    <script>
+      function calculate() {
+        let costPrice = parseFloat(document.getElementById("cost-price").value);
+        let sellingPrice = parseFloat(
+          document.getElementById("selling-price").value
+        );
+        let resultDiv = document.getElementById("result");
+
+        if (sellingPrice > costPrice) {
+          let profit = sellingPrice - costPrice;
+          resultDiv.innerText = `You made a profit of ${profit.toFixed(
+            2
+          )} dollars.`;
+        } else if (sellingPrice < costPrice) {
+          let loss = costPrice - sellingPrice;
+          resultDiv.innerText = `You incurred a loss of ${loss.toFixed(
+            2
+          )} dollars.`;
+        } else {
+          resultDiv.innerText =
+            "You neither made a profit nor incurred a loss.";
+        }
+      }
+    </script>
+  </body>
+</html>
