@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Character Checker</title>
+  </head>
+  <body>
+    <h1>Character Checker</h1>
+    <p>Enter a character:</p>
+    <input type="text" id="charInput" />
+    <button onclick="checkCharacter()">Check Character</button>
+    <p id="result"></p>
+
+    <script>
+      function checkCharacter() {
+        let char = document.getElementById("charInput").value;
+
+        if (char.match(/[a-zA-Z]/)) {
+          document.getElementById("result").innerHTML =
+            char + " is an alphabet";
+        } else if (char.match(/[0-9]/)) {
+          document.getElementById("result").innerHTML = char + " is a digit";
+        } else {
+          document.getElementById("result").innerHTML =
+            char + " is a special character";
+        }
+      }
+    </script>
+  </body>
+</html>

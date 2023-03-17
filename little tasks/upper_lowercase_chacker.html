@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Uppercase/Lowercase Checker</title>
+  </head>
+  <body>
+    <h1>Uppercase/Lowercase Checker</h1>
+    <p>Enter a character:</p>
+    <input type="text" id="charInput" />
+    <button onclick="checkCharacter()">Check Character</button>
+    <p id="result"></p>
+
+    <script>
+      function checkCharacter() {
+        let char = document.getElementById("charInput").value;
+
+        if (char.match(/[A-Z]/)) {
+          document.getElementById("result").innerHTML =
+            char + " is an uppercase alphabet";
+        } else if (char.match(/[a-z]/)) {
+          document.getElementById("result").innerHTML =
+            char + " is a lowercase alphabet";
+        } else {
+          document.getElementById("result").innerHTML =
+            char + " is not an alphabet";
+        }
+      }
+    </script>
+  </body>
+</html>
